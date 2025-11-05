@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ajotmmrq0f0"]
+
+[ext_resource type="Script" uid="uid://ds57u3k16g7e7" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://d4isli0xus662" path="res://hud.gd" id="3_1bvp3"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_h2yge")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_1bvp3")
+
+[node name="Start_Button" type="Button" parent="HUD"]
+offset_left = 952.0
+offset_top = 24.0
+offset_right = 1087.0
+offset_bottom = 99.0
+text = "START"
+
+[node name="Reset_Button" type="Button" parent="HUD"]
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 199.0
+offset_bottom = 107.0
+text = "RESET"
+
+[node name="Red_Button" type="Button" parent="HUD"]
+offset_left = 500.0
+offset_top = 50.0
+offset_right = 650.0
+offset_bottom = 200.0
+text = "Red"
+
+[node name="Blue_Button" type="Button" parent="HUD"]
+offset_left = 300.0
+offset_top = 360.0
+offset_right = 450.0
+offset_bottom = 510.0
+text = "Blue"
+
+[node name="Yellow_Button" type="Button" parent="HUD"]
+offset_left = 700.0
+offset_top = 360.0
+offset_right = 850.0
+offset_bottom = 510.0
+text = "Yellow
+"
+
+[node name="Orange_Button" type="Button" parent="HUD"]
+offset_left = 700.0
+offset_top = 152.0
+offset_right = 850.0
+offset_bottom = 302.0
+text = "Orange"
+
+[node name="Green_Button" type="Button" parent="HUD"]
+offset_left = 500.0
+offset_top = 450.0
+offset_right = 650.0
+offset_bottom = 600.0
+text = "Green"
+
+[node name="Violet_Button" type="Button" parent="HUD"]
+offset_left = 300.0
+offset_top = 152.0
+offset_right = 450.0
+offset_bottom = 302.0
+text = "Violet"
+
+[connection signal="pressed" from="HUD/Start_Button" to="HUD" method="_on_start_button_pressed"]
+[connection signal="pressed" from="HUD/Reset_Button" to="HUD" method="_on_reset_button_pressed"]
+[connection signal="pressed" from="HUD/Red_Button" to="." method="_on_red_button_pressed"]
+[connection signal="pressed" from="HUD/Blue_Button" to="." method="_on_blue_button_pressed"]
+[connection signal="pressed" from="HUD/Yellow_Button" to="." method="_on_yellow_button_pressed"]
+[connection signal="pressed" from="HUD/Orange_Button" to="." method="_on_orange_button_pressed"]
+[connection signal="pressed" from="HUD/Green_Button" to="." method="_on_green_button_pressed"]
+[connection signal="pressed" from="HUD/Violet_Button" to="." method="_on_violet_button_pressed"]
