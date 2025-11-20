@@ -1,26 +1,31 @@
 extends CanvasLayer
 
-var color_num = 3 #number of colors on screen
-var color_list_length = 0 #number of colors that Simon will say
-var color_list
-func _on_start_button_pressed():
-	color_list_length += 1 #increase list length by one every time button is pressed
-	color_list = [] #Clear list from previous button press
-	for i in color_list_length:
-		var rng = randi() % color_num #random number between 0 and (color_num - 1)
-		color_list.append(rng)
-	print(color_list)
+var max_Colors = 5
+var color_ID = {
+	"Red": 0, 
+	"Yellow": 1, 
+	"Blue": 2, 
+	"Green": 3, 
+	"Orange": 4, 
+	"Purple": 5}
 
-# Reset game to default start
-func _on_reset_button_pressed():
-	color_num = 3
-	color_list_length = 0
+var circle_radius = 200
+var x_center = 501
+var y_center = 249
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	for i in range(max_Colors):
+		var button = Button.new()
+		button.text = color_ID.find_key(i)
+		button.size.x = 150
+		button.size.y = 150
+		button.position.x = x_center + circle_radius * -sin((2 * PI * i / max_Colors))
+		button.position.y = y_center + circle_radius * -cos((2 * PI * i / max_Colors))
+		#button.pressed.connect()
+		add_child(button)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
